@@ -1,5 +1,5 @@
 1. String/Array
-========================================================================================================================================
+
 An algorithm problem's input is often a string or array. Without auto-completion of any IDE, the following methods should be remembered.
 
 toCharArray() //get char array of a String
@@ -14,7 +14,7 @@ Arrays.sort()  //sort an array
 Arrays.toString(char[] a) //convert to string
 Arrays.copyOf(T[] original, int newLength)
 System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
-=======================================================================================================================================
+
 Classic problems:
 --Two Pointers--
 1) Rotate Array, Reverse Words in a String
