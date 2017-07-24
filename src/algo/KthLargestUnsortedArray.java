@@ -16,12 +16,17 @@ public class KthLargestUnsortedArray {
 	}
 
 	private static int kthLargest(int[] arr, int k) {
+		//handle error conditions start 
 		if(arr == null || arr.length == 0)
 			return -1;
+		//handle error conditions end 
+		
+		//create a min heap of size k
 		PriorityQueue<Integer> pq = new PriorityQueue<>();
 		for(int i = 0; i < k; i++) {
 			pq.add(arr[i]);
 		}
+		
 		for(int i = k; i < arr.length; i++) {
 			if(arr[i] > pq.peek()) {
 				pq.poll();

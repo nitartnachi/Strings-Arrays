@@ -16,10 +16,14 @@ public class RotateArray {
 	}
 
 	private static void rotateArray(int[] arr, int k) {
+		//handle error conditions start 
 		if(arr == null || arr.length == 0)
 			return;
+		
 		if(k > arr.length)
 			k = k % arr.length;
+		//handle error conditions end
+		
 		reverse(0,k-1, arr);
 		reverse(k,arr.length-1, arr);
 		reverse(0, arr.length-1,arr);

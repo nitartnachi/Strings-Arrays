@@ -17,10 +17,13 @@ public class IsomorphicString {
 	}
 
 	private static boolean isIsomorphic(String str1, String str2) {
+		//handle error conditions start 
 		if(str1 == null && str2 == null)
 			return true;
 		if(str1 == null || str2 == null || str1.length() != str2.length())
 			return false;
+		//handle error conditions end 
+		
 		char c1, c2;
 		HashMap<Character, Character> map = new HashMap<>();
 		for(int i = 0; i < str1.length(); i++) {
