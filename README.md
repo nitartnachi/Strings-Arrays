@@ -1,4 +1,4 @@
-1. String/Array
+String and Arrays Problems.
 
 An algorithm problem's input is often a string or array. Without auto-completion of any IDE, the following methods should be remembered.
 
