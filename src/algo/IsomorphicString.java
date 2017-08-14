@@ -8,6 +8,9 @@ package algo;
 import java.util.HashMap;
 
 public class IsomorphicString {
+	
+	// time O(string1.length() + string2.length()) -- space O(string1.length())
+	
 	public static void main(String[] args) {
 		String str1 = "foo";//null;//"egg";
 		String str2 = "bar";//null;//"add";
@@ -32,6 +35,7 @@ public class IsomorphicString {
 			if(!map.containsKey(c1))
 				map.put(c1, c2);
 			else {
+				// each character in string 1 should be mapped to the same character in string 2, else return false
 				if(map.get(c1) != c2)
 					return false;
 			}

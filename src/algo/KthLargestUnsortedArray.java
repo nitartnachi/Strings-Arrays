@@ -8,6 +8,9 @@ package algo;
 import java.util.PriorityQueue;
 
 public class KthLargestUnsortedArray {
+	
+	// time O(arr.length*logk) -- space O(k)
+	
 	public static void main(String[] args) {
 		int[] arr = null;//new int[] {3,2,1,5,6,4};
 		int k = 2;
@@ -27,6 +30,7 @@ public class KthLargestUnsortedArray {
 			pq.add(arr[i]);
 		}
 		
+		// process rest of the elements in the array
 		for(int i = k; i < arr.length; i++) {
 			if(arr[i] > pq.peek()) {
 				pq.poll();

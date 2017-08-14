@@ -8,6 +8,9 @@ package algo;
 import java.util.Arrays;
 
 public class RotateArray {
+	
+	// time O(arr.length) -- space O(1)
+	
 	public static void main(String[] args) {
 		int[] arr = new int[] {1,2,3,4,5,6,7};
 		int k = 3;
@@ -24,9 +27,9 @@ public class RotateArray {
 			k = k % arr.length;
 		//handle error conditions end
 		
-		reverse(0,k-1, arr);
-		reverse(k,arr.length-1, arr);
-		reverse(0, arr.length-1,arr);
+		reverse(0,k-1, arr); //reverse sub array from 0 to k-1
+		reverse(k,arr.length-1, arr); //reverse sub array from k to length-1
+		reverse(0, arr.length-1,arr); // reverse the entire array
 	}
 
 	private static void reverse(int start, int end, int[] arr) {
