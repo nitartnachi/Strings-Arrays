@@ -3,7 +3,7 @@
  * For example,"egg" and "add" are isomorphic, "foo" and "bar" are not.
  */
 
-package algo;
+package com.nitin.algo;
 
 import java.util.HashMap;
 

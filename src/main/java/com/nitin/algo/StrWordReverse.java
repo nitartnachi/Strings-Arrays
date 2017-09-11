@@ -3,7 +3,7 @@
  * Given s = "the sky is blue", return "blue is sky the"
  */
 
-package algo;
+package com.nitin.algo;
 
 public class StrWordReverse {
 	

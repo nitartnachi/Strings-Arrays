@@ -3,7 +3,7 @@
  * For example, given [3,2,1,5,6,4] and k = 2, return 5.
  */
 
-package algo;
+package com.nitin.algo;
 
 import java.util.PriorityQueue;
 
