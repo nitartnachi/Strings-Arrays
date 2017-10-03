@@ -1,6 +1,8 @@
 /*
  * Given two strings s and t, determine if they are isomorphic.
  * For example,"egg" and "add" are isomorphic, "foo" and "bar" are not.
+ * ----------------------------------------------------------------------------------------
+ * BIG O Details: time O(string1.length() + string2.length()) -- space O(string1.length())
  */
 
 package com.nitin.algo;
@@ -8,18 +10,9 @@ package com.nitin.algo;
 import java.util.HashMap;
 
 public class IsomorphicString {
-	
-	// time O(string1.length() + string2.length()) -- space O(string1.length())
-	
-	public static void main(String[] args) {
-		String str1 = "foo";//null;//"egg";
-		String str2 = "bar";//null;//"add";
-		boolean result = isIsomorphic(str1, str2);
-		String resultStr = (result == true) ? "isomorphcic" : "not isomorphic";
-		System.out.println(str1 + " and " + str2 + " are " + resultStr);
-	}
 
 	private static boolean isIsomorphic(String str1, String str2) {
+		
 		//handle error conditions start 
 		if(str1 == null && str2 == null)
 			return true;
@@ -41,6 +34,14 @@ public class IsomorphicString {
 			}
 		}
 		return true;
+	}
+	
+	public static void main(String[] args) {
+		String str1 = "abcdabcdabc";//"foo";//null;//"egg";
+		String str2 = "wxyzwxyzwxy";//"bar";//null;//"add";
+		boolean result = isIsomorphic(str1, str2);
+		String resultStr = (result == true) ? "isomorphcic" : "not isomorphic";
+		System.out.println(str1 + " and " + str2 + " are " + resultStr);
 	}
 
 }

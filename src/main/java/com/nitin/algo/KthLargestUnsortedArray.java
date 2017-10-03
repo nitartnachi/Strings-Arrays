@@ -1,6 +1,8 @@
 /*
  * Find the kth largest element in an unsorted array.
  * For example, given [3,2,1,5,6,4] and k = 2, return 5.
+ * ------------------------------------------------------
+ * BIG O Details: time O(arr.length * logk) -- space O(k)
  */
 
 package com.nitin.algo;
@@ -8,15 +10,6 @@ package com.nitin.algo;
 import java.util.PriorityQueue;
 
 public class KthLargestUnsortedArray {
-	
-	// time O(arr.length*logk) -- space O(k)
-	
-	public static void main(String[] args) {
-		int[] arr = null;//new int[] {3,2,1,5,6,4};
-		int k = 2;
-		int kthlarge = kthLargest(arr, k);
-		System.out.println("The " + k + "th largest number in the array is " + kthlarge);
-	}
 
 	private static int kthLargest(int[] arr, int k) {
 		//handle error conditions start 
@@ -38,6 +31,13 @@ public class KthLargestUnsortedArray {
 			}
 		}
 		return pq.peek();
+	}
+	
+	public static void main(String[] args) {
+		int[] arr = new int[] {3,2,1,5,6,4};
+		int k = 2;
+		int kthlarge = kthLargest(arr, k);
+		System.out.println("The " + k + "th largest number in the array is " + kthlarge);
 	}
 
 }
