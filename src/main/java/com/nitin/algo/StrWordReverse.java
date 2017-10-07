@@ -11,38 +11,42 @@ public class StrWordReverse {
 
 	private static String strReverse(String input) {
 		
-		//handle error conditions start 
+		// handle error conditions and corner case
 		if(input == null || input.isEmpty())
 			return input;
 		String temp = input.trim();
-		if(!temp.contains(" ")) //only word
+		if(!temp.contains(" ")) // only word
 			return input;
-		//handle error conditions start 
 		
-		char[] arr = input.toCharArray();
-		int len = arr.length;
+		char[] array = temp.toCharArray();
+		int len = array.length;
 		int j = 0;
 		
-		//process the string, reverse each word
+		// process the array
 		for (int i = 0; i < len; ++i) {
-			if(arr[i] == ' ') {
-				Utils.reverseChar(arr, j, i-1);
-				j = i+1;
+			if(array[i] == ' ') { // end of word
+				Utils.reverseChar(array,  j,  i-1); // reverse the word
+				j = i + 1;
 			}
 		}
-		//reverse the last word
-		Utils.reverseChar(arr, j, len-1);
 		
-		//reverse the entire char array again
-		Utils.reverseChar(arr, 0, len-1);
+		// reverse the last word
+		Utils.reverseChar(array, j,  len-1);
 		
-		return new String(arr);
+		// reverse the entire array again
+		Utils.reverseChar(array,  0,  len-1);
+		
+		return new String(array);
+			
 	}
 	
+	// test harness
 	public static void main(String[] args) {
+		
 		String input = "the sky is blue"; //"test ";
 		
 		String output = strReverse(input);
+		
 		System.out.println("String after reversal is --->> " + output);
 	}
 

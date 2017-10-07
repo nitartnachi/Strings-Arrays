@@ -12,23 +12,29 @@ import java.util.Arrays;
 public class RotateArray {
 
 	private static void rotateArray(int[] arr, int k) {
-		//handle error conditions start 
-		if(arr == null || arr.length == 0)
+		
+		int len = arr.length;
+		
+		// handle error conditions and corner case
+		if(arr == null || len < k) {
+			System.out.println("Server response: Input validation failed, check your input and try again");
 			return;
+		}
 		
-		if(k > arr.length)
-			k = k % arr.length;
-		//handle error conditions end
+		// process the array and rotate it
+		Utils.reverseInt(arr, 0, k-1); // reverse the k elements
+		Utils.reverseInt(arr, k, len-1); // reverse len-k elements
+		Utils.reverseInt(arr, 0, len-1); // reverse entire array
 		
-		Utils.reverseInt(arr, 0, k-1); //reverse sub array from 0 to k-1
-		Utils.reverseInt(arr, k, arr.length-1); //reverse sub array from k to length-1
-		Utils.reverseInt(arr, 0, arr.length-1); // reverse the entire array
 	}
 	
+	// test harness
 	public static void main(String[] args) {
+		
 		int[] arr = new int[] {1,2,3,4,5,6,7};
-		int k = 3;
+		int k = 8;
 		rotateArray(arr, k);
+		
 		System.out.println("Array after rotation is " + Arrays.toString(arr));
 	}
 
