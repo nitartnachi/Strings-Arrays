@@ -14,9 +14,11 @@ public class IsomorphicString {
 	private static boolean isIsomorphic(String str1, String str2) {
 		
 		// handle error conditions and corner case
-		if( (str1 == null && str2 == null) || str1.equals(str2))
+		if(str1 == null && str2 == null)
 			return true;
-		if(str1 == null || str2 == null || str1.length() != str2.length())
+		if( (str1 == null && str2 != null) || (str1 != null && str2 == null) )
+			return false;
+		if( str1.length() != str2.length())
 			return false;
 		
 		// process the two strings
@@ -42,7 +44,7 @@ public class IsomorphicString {
 	// test harness
 	public static void main(String[] args) {
 		
-		String str1 = "abcdabcdabc";//"foo";//null;//"egg";
+		String str1 = null;//"abcdabcdabc";//"foo";//null;//"egg";
 		String str2 = "wxyzwxyzwxy";//"bar";//null;//"add";
 		boolean result = isIsomorphic(str1, str2);
 		

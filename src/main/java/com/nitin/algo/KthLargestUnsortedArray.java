@@ -12,13 +12,17 @@ import java.util.PriorityQueue;
 public class KthLargestUnsortedArray {
 
 	private static int kthLargest(int[] arr, int k) {
-
-		int len = arr.length;
 		
 		// handle error conditions and corner case
-		if(arr == null || len < k) {
-			System.out.println("Server response: Input validation failed, check your input and try again");
-			return -	1;
+		if(arr == null) {
+			System.out.println("Server response: Input validation failed, input is null");
+			return -1;
+		}
+
+		int len  = arr.length;
+		if(len < k) {
+			System.out.println("Server response: Input validation failed, length of array is less than " + k);
+			return -1;
 		}
 		
 		//create a min heap of k elements, min heap has the smallest element on top
@@ -41,8 +45,8 @@ public class KthLargestUnsortedArray {
 	// test harness
 	public static void main(String[] args) {
 		
-		int[] arr = new int[] {3,2,1,5,6,4};
-		int k = 6;
+		int[] arr = {3,2,1,5,6,4};
+		int k = 4;
 		int kthlarge = kthLargest(arr, k);
 		
 		System.out.println("The " + k + "th largest number in the array is " + kthlarge);

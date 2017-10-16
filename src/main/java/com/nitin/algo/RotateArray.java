@@ -12,12 +12,16 @@ import java.util.Arrays;
 public class RotateArray {
 
 	private static void rotateArray(int[] arr, int k) {
-		
-		int len = arr.length;
-		
+
 		// handle error conditions and corner case
-		if(arr == null || len < k) {
-			System.out.println("Server response: Input validation failed, check your input and try again");
+		if(arr == null) {
+			System.out.println("Server response: Input validation failed, input is null");
+			return;
+		}
+		
+		int len  = arr.length;
+		if(len < k) {
+			System.out.println("Server response: Input validation failed, length of array is less than " + k);
 			return;
 		}
 		
@@ -31,8 +35,8 @@ public class RotateArray {
 	// test harness
 	public static void main(String[] args) {
 		
-		int[] arr = new int[] {1,2,3,4,5,6,7};
-		int k = 8;
+		int[] arr = {1,2,3,4,5,6,7};
+		int k = 4;
 		rotateArray(arr, k);
 		
 		System.out.println("Array after rotation is " + Arrays.toString(arr));
