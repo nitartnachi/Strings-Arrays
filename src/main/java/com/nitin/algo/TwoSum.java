@@ -20,7 +20,6 @@ import java.util.Map;
 
 public class TwoSum {
 
-	@SuppressWarnings("unchecked")
 	private static List<Integer> twoSum(int[] arr, int sum) {
 
 		// handle error conditions and corner case
