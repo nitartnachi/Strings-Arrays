@@ -41,9 +41,14 @@ public class TwoSumV2 {
 		if(map.isEmpty())
 			return false;
 		
+		int target;
 		for(Integer i : map.keySet()) {
-			if(map.containsKey(sum - i))
+			target = sum - i;
+			if(map.containsKey(target)) {
+				if( i == target && map.get(target) < 2 ) // this condition captures input where you have add(2), add(1), find(4), without this it will return true which is not correct
+					continue;
 				return true;
+			}
 		}
 		return false;
 		
@@ -52,8 +57,8 @@ public class TwoSumV2 {
 	// test harness
 	public static void main(String[] args) {
 
+		add(2);
 		add(1);
-		add(3);
 		add(5);
 		System.out.print(find(4));
 		System.out.println();
