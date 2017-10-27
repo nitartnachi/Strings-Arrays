@@ -6,6 +6,10 @@
 package com.nitin.algo;
 
 public class BinaryAddition {
+
+	static int sum = 0, carry = 0;
+	static char c1, c2;
+	static StringBuilder sb = new StringBuilder();
 	
 	private static String binarySum(String s1, String s2) {
 
@@ -27,16 +31,63 @@ public class BinaryAddition {
 			else
 				return s1;
 		}
-		return null;
+		
+		//process the string and return result
+		
+		
+		int i = s1.length() - 1;
+		int j = s2.length() - 1;
+		
+		while(i >= 0 && j >= 0) {
+			carry = eval(s1.charAt(i), s2.charAt(j));
+			i--;
+			j--;
+		}
+		
+		if(i < 0) {
+			while(j >= 0) {
+				carry = eval('0', s2.charAt(j));
+				j--;
+			}
+		}
+		else if(j < 0) {
+			while(i >= 0) {
+				carry = eval(s1.charAt(i), '0');
+				i--;
+			}
+		}
+		
+		if(carry > 0)
+			sb.append(String.valueOf(carry));
+		return sb.reverse().toString();
+	}
+
+	private static int eval(char c1, char c2) {
+		sum = (c1 - '0') + (c2 - '0') + carry;
+		switch(sum) {
+		case 2:
+			sb.append("0");
+			carry = 1;
+			break;
+		case 3:
+			sb.append("1");
+			carry = 1;
+			break;
+		default:
+			sb.append(String.valueOf(sum));
+			carry = 0;
+			break;
+		}
+		return carry;
 	}
 
 	// test harness
 	public static void main(String[] args) {
 		
-		String s1 = "11";
-		String s2 = "1";
+		String s1 = "111";
+		String s2 = "1011";
 		
-		System.out.println("The binary sum of the given numberts is : " + binarySum(s1, s2));
+		System.out.println("The binary sum of the given numbers is : " + binarySum(s1, s2));
 	}
 
 }
