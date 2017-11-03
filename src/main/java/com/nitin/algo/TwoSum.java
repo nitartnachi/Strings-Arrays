@@ -25,7 +25,7 @@ public class TwoSum {
 		// handle error conditions and corner case
 		if(arr == null || arr.length < 2) {
 			System.out.println("Server response: Input validation failed, input is null");
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		
 		List<Integer> arrList = new ArrayList<>();
