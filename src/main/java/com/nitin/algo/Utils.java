@@ -21,4 +21,11 @@ public class Utils {
 			arr[end--] = temp;
 		}
 	}
+	
+	public static void swap(int[] arr, int start, int end) {
+		int temp;
+		temp = arr[start];
+		arr[start] = arr[end];
+		arr[end] = temp;
+	}
 }

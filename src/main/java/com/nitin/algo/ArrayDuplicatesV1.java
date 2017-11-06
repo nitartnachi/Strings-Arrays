@@ -1,6 +1,6 @@
 /*
- Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, 
- and it should return false if every element is distinct.
+ Given an array of postive integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, 
+ and it should return false if every element is distinct. elements min and max as follows 0 <= x <= len(array) - 1
  * ------------------------------------------------------------------------------------------------------------------------------------------------------
  * BIG O Details: time O(arr.length) -- space O(1) the key is in place with just one pass of the array, 
  * will not work for negative numbers in the array. also the numbers in the array should be less than or equal to length i.e. 0 <= x <= len(array) - 1

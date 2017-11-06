@@ -1,9 +1,9 @@
 /*
- Find all duplicates from an array, example 1,2,2,4,5,5,5,6,7,8 should return 2,5 
+ Find all duplicates from an array, example 1,2,2,4,5,5,5,6,7,8 should return 2,5, 
+ Input array will have only positive integers (x) with the min and max as 0 <= x <= len(array) - 1
  * -----------------------------------------------------------------------------------------------------------------------------------------------------
  * BIG O Details: time O(arr.length) -- space O(1) the key is in place with just one pass of the array, will not work for negative numbers in the array.
  * will not work for negative numbers in the array. also the numbers in the array should be less than or equal to length i.e. 0 <= x <= len(array) - 1
- * For negative numbers we can use map solution but it will use extra space.
  * For negative numbers we can use map solution but it will use extra space.
  */
 
@@ -27,7 +27,7 @@ public class FindAllDuplicates {
 		for(int i = 0; i < len; ++i) {
 			int cur = Math.abs(arr[i]);
 			if(cur >= len)
-				continue;
+				throw new RuntimeException("Invalid input");
 			if(arr[cur] < 0) 
 				dups.add(Math.abs(arr[i]));
 			arr[cur] = -arr[cur];
