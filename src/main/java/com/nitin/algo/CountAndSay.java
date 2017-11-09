@@ -7,6 +7,8 @@
 	21 is read off as "one 2, then one 1" or 1211.
 	1211 is read off as "one 1, one 2, then two 1" or 111221.
 	111221 is read off as "three 1s, two 2s, then one 1" or 1112211
+	1112211 is read off as "three 1s, two 2s, then two 1s" or 312211
+	312211 is read off as "one 3, one 1, two 2s, then two 1s" or 13112211
 	Given an integer n, generate the nth sequence.
 
  */
