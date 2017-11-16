@@ -36,8 +36,6 @@ public class BinaryAddition {
 		}
 		
 		//process the string and return result
-		
-		
 		int i = s1.length() - 1;
 		int j = s2.length() - 1;
 		
