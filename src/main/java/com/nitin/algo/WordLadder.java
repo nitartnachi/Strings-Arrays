@@ -28,6 +28,7 @@ public class WordLadder {
 	}
 
 	public static void main(String[] args) {
+		System.out.println(args.length);
 		String start = "hit";
 		String end = "cog";
 		Set<String> dict = new HashSet<>();
