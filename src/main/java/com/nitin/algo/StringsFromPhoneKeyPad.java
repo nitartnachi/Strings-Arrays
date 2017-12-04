@@ -13,7 +13,7 @@ import java.util.List;
 public class StringsFromPhoneKeyPad {
 	
 	public static void main(String[] args) {
-		String input = "123456789";
+		String input = "246";
 		List<String> list = wordsFromPhoneKeyPad(input);
 		System.out.println(list.size() + " The words formed from given digits are: " + list.toString());
 	}
@@ -33,7 +33,7 @@ public class StringsFromPhoneKeyPad {
             for (int k = 0; k < size; k++) {
                 String tmp = list.remove();
                 for (int j = 0; j < letters[index].length(); j++)
-                	list.add(tmp + letters[index].charAt(j));
+                		list.add(tmp + letters[index].charAt(j));
             }
             
         }
